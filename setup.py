@@ -6,6 +6,7 @@ setup(name = "sprotbot",
       packages = find_packages(),
       author = "Darren Richardson",
       version = "1",
+      package_data = {"sprotbot": ["templates/*"]},
       install_requires = [
             "boto3==1.4.4",
             "click==6.7"

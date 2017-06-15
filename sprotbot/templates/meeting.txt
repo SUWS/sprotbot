@@ -1,0 +1,8 @@
+Greetings SUWS Member!
+
+On {EVENT_DATE} we'll be having a SUWS {EVENT_TYPE} from 1800-2000, in the Zepler CLS.
+
+As usual, people will be heading to the Crown Inn, at approximately 2000, for food and banter (🚂🚫).
+
+Yours,
+The Barrett-Sprot Replacement Bot Service 🤖
