@@ -3,16 +3,14 @@ from datetime import datetime, timedelta
 import os
 from sprotbot.notify import send_email
 
-def determine_meeting_details():
+def determine_meeting_details(date):
     """
     The purpose of this function is to determine what the date
     of the next SUWS event is going to be, and to figure out
     whether it will be a meeting or a workshop.
     """
 
-    now = datetime.now()
-
-    cur_day = now.weekday()
+    cur_day = date.weekday()
 
     if cur_day == 3:
         # Today is a Thursday...
@@ -26,7 +24,7 @@ def determine_meeting_details():
 
     td = timedelta(days=days_to_thur)
 
-    meeting_day = now + td
+    meeting_day = date + td
     week = (meeting_day.day - 1) // 7
     event_type = "meeting" if week % 2 == 0 else "workshop"
     
@@ -60,7 +58,7 @@ def send_meeting_reminder():
     with open(os.path.join(os.path.dirname(__file__), "templates", "meeting.txt"), "r") as template_file:
         template = template_file.read()
 
-    e_date, e_type = determine_meeting_details()
+    e_date, e_type = determine_meeting_details(datetime.now())
 
     sender, recipient = load_email_details()
 
