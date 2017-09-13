@@ -27,7 +27,7 @@ def determine_meeting_details():
     td = timedelta(days=days_to_thur)
 
     meeting_day = now + td
-    week = meeting_day.day // 7
+    week = (meeting_day.day - 1) // 7
     event_type = "meeting" if week % 2 == 0 else "workshop"
     
     return meeting_day.strftime("%Y-%m-%d"), event_type
